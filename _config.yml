@@ -1,0 +1,19 @@
+title: wookietreiber
+
+description: someone who loves to code
+
+name: wookietreiber
+
+theme: jekyll-theme-hacker
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+
+permalink: /blog/:year/:month/:day/:title
+
+plugins:
+  - jekyll-mentions
+
+author: "@wookietreiber"
