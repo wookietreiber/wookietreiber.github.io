@@ -7,19 +7,34 @@ tags:
 
 ## goals
 
-- unified definition of configuration, no duplication, e.g. in `--help` output and man page
-- consistency across usage and documentation, as a direct result of the unified definition
+1.  **unified definition** (spec)
+
+    no duplication (DRY), e.g. in writing both `--help` output and man page
+
+2.  **consistency** across usage and documentation
+
+    a direct result of the unified definition
+
+3.  **scalability**
+
+    scale from small tools like `app [input]` to multi sub-command tools like git
 
 ## unification
 
-- command line argument parser generation
-- environment variables
-- configuration files, including freedesktop.org base directory spec
+programming language agnostic:
+
 - man page generation
   - man1 for all command line tools
   - man5 for all configuration file formats
 - shell completion generation
-- `--help` output generation
+
+programming language specific:
+
+- command line argument parser generation
+  - `--help` output generation
+- integration of environment variables
+- integration of configuration file parser
+- freedesktop.org base directory spec for location of configuration files
 
 ## configuration files and precedence
 
@@ -43,10 +58,6 @@ consistent, clear precedence rules, principle of least surprise
 5.  command line arguments
 
 Wherever it makes sense to split configuration files, instead of `app.conf` think either `app/{a,b}.conf` or `app.d/{a,b}.conf`.
-
-## scalability
-
-- scale from small tools like `app [input]` to multi subcommand tools like git
 
 ## command line options
 
