@@ -109,3 +109,35 @@ think either `app/{a,b}.conf` or `app.d/{a,b}.conf`.
 - deprecated arguments, i.e. when used output deprecation warning
 - ignored arguments, i.e. silently ignored, for compatibility with similar
   tools
+
+
+## an example spec file
+
+```yml
+---
+
+- name: app
+  version: '${BuildInfo.version}'
+
+  arguments:
+
+    - name: input
+      type: file
+
+    - name: output
+      type: file
+
+  options:
+
+    - name: threads
+      long: '--threads'
+      short: '-t'
+      type: int
+
+    - name: verbose
+      long: '--verbose'
+      short: '-v'
+      type: boolean
+
+...
+```
